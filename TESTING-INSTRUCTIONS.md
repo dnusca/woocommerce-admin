@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Making business details sticky in OBW #7426
+
+1. Start out with fresh store
+2. Start the on-boarding wizard and move through to the "Business details" step
+3. Fill out items, and then hit Continue to move to "Free features" tab
+4. Then, before hitting Continue again, click "Business details" tab above to move back to that step
+5. Confirm that the previously selected values are still correct
+
 ### Fix WC Home crash when the Analytics is disabled.
 
 1. Navigate to WooCommerce -> Settings -> Advanced -> Features. Uncheck Analytics and save the changes.
@@ -64,25 +72,26 @@ Please make sure to test it on Safari as well.
 1. Go to the OBW and look at the Free features tab
 1. Observe no Facebook extension in the list
 
-###  "Terms of service" link disappears from "Set up Tax" screen #7269
+### "Terms of service" link disappears from "Set up Tax" screen #7269
 
 1. Go to OBW setup wizard.
 2. Uncheck the "WooCommerce shipping" and "WooCommerce Tax" options at Free features step.
 3. Complete the OBW setup.
 4. Go to WooCommerce->Home.
 5. Click on "Set up Tax" option on Task list.
-6. TOS should not blink. 
+6. TOS should not blink.
 
 ### Use saved values if available when switching tabs #7226
 
 1. Start onboarding wizard and continue to step 4.
 2. Enter selections for business details and choose "Continue"
 3. Select the tab "Business details" to go back
-4. Confirm that the previously selected values are shown. 
+4. Confirm that the previously selected values are shown.
 
 ### Change the emailed report file name #7178
 
 **Confirm the default behaviour remains the same**
+
 1. Create a new store and install the [WP Mail Logging by MailPoet plugin](https://wordpress.org/plugins/wp-mail-logging/)
 2. Go to Analytics -> Revenue and change the date range to last month
 3. Click the download button and make sure you see the "Your revenue report will be emailed to you" notification
@@ -90,13 +99,17 @@ Please make sure to test it on Safari as well.
 5. Go to Tools -> WP Mail Log and check the latest email. The URL linked to the "Download your Revenue report" should work as usual. The URL will be something like `filename=wc-revenue-report-export-16236128226138`
 
 **Confirm the new filter is working**
+
 1. Add this code to the `woocommerce-admin.php` file
+
 ```php
 add_filter( 'woocommerce_admin_export_id', function ($export_id) {
 	return 'different_export_id';
 } );
 ```
+
 2. Repeat the same steps from above. The filename in the link now should be `different_export_id`.
+
 ### Payment gateway suggestions feature
 
 1. Navigate to the homescreen via WooCommerce -> Home
@@ -153,12 +166,10 @@ Individual payment gateway plugins dictate the settings and connection flow. For
 4. In Chrome, open the console "Network" tab and right-click on the `get-params` request and select "Block request URL"
 5. Refresh the page and note that the manual settings flow is shown
 
-
 ##### Klarna
 
 1. Set your store country to one of the following: `SE, FI, NO`
 2. Don't select CBD as an industry during onboarding
-
 
 ##### Mollie
 
@@ -181,7 +192,6 @@ Individual payment gateway plugins dictate the settings and connection flow. For
 
 1. Make sure "Enable" is shown and clicking this enables the gateway
 2. Make sure the "Manage" button is shown after enabling the gateway
-
 
 ##### Direct bank transfer
 
