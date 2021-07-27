@@ -2,6 +2,25 @@
 
 ## Unreleased
 
+### Show Pinterest for WooCommerce in `Marketing > Installed` #7417
+
+_Prerequisite_: This requires the forthcoming native [__Pinterest for WooCommerce__ extension](https://github.com/saucal/pinterest-for-woocommerce) (which may not be available).
+
+If __Pinterest for WooCommerce__ is installed, marketing screen should show status info.
+
+1. Install __Pinterest for WooCommerce__ extension. Don't activate it.
+1. Go to `WooCommerce > Marketing`.
+1. Confirm there is a row for Pinterest in `Installed marketing extensions` with `Activate` button.
+1. Activate the extension by clicking the button, or via normal `WordPress > Plugins` screen.
+1. Go to `WooCommerce > Marketing`.
+1. Confirm the Pinterest row guides merchant to set up the extension (if not yet set up) or links to settings and docs.
+
+Marketing screen should be unaffected if __Pinterest for WooCommerce__ is not installed.
+
+1. Ensure __Pinterest for WooCommerce__ is not installed.
+1. Go to `WooCommerce > Marketing`.
+1. Should look and work the same as in previous versions.
+
 ### Fix WC Home crash when the Analytics is disabled.
 
 1. Navigate to WooCommerce -> Settings -> Advanced -> Features. Uncheck Analytics and save the changes.
